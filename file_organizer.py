@@ -23,7 +23,14 @@ files_categories = {
 
 # Creating folders for each category
 for folder in files_categories:
-    os.makedirs(os.path.join(source_folder, folder), exist_ok=True)
+    # Creating folders 
+    #? Step 01 (one line)
+    # os.makedirs(os.path.join(source_folder, folder), exist_ok=True)
+
+    #? Step 02 (multiple lines)
+    new_folder = os.path.join(source_folder, folder)
+    if not os.path.exists(new_folder):
+        os.makedirs(new_folder)
 
 # Going through each file in the folder
 for file_name in os.listdir(source_folder):
